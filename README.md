@@ -78,11 +78,11 @@ This project is unmonitored. Contributions are not accepted at this time.
 ## Authors
 
 * [Tristyn Maalouf](https://github.com/tristyn-maalouf)
-* [Kevin Jerauld]()
+* Kevin Jerauld
 
 
 ## License
 
-This project is licensed under the Apache 2.0 License. See [LICENSE.md](./LICENSE.md) for more info.
+This project is licensed under the Apache 2.0 License. See [LICENSE.md](./LICENSE) for more info.
 
 
