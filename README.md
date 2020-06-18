@@ -48,7 +48,7 @@ Save and activate your Lightning app when done.
 
 You should now be able to search for your Lightning App and run the audit against your org! When it's all said and done, you should see something like this (using the RecordType auditor as an example):
 
-![RecordType Auditor View](./resources/RecordTypeAuditor.png)
+![RecordType Auditor View](resources/RecordTypeAuditor.png)
 
 ## Deployment
 
