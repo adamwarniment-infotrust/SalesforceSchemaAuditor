@@ -14,8 +14,6 @@ These instructions will get you a copy of the project up and running on your Sal
 ```
 Setup > Apex Classes > Developer Console
 ```
-_Note: For the Field Auditor, be sure to also grab the FieldData class. For Object Auditor, be sure to grab the FieldAuditor **and** FieldData class as well._
-
 
 ##### Set the VisualForce Page(s) to _Available for Lightning Experience, Lightning Communities, and the mobile app_
 
@@ -46,28 +44,26 @@ Choose a 'One Region' view so that the auditor results table takes up the whole 
  ```
 Save and activate your Lightning app when done.
 
-You should now be able to search for your Lightning App and run the audit against your org! When it's all said and done, you should see something like this (using the RecordType auditor as an example):
-
-![RecordType Auditor View](resources/RecordTypeAuditor.png)
+You should now be able to search for your Lightning App and run the audit against your org! 
 
 ## Deployment
 
-This is a developer tool and isn't meant to be deployed to any end users, so there really are no deployment notes. I recommend running this in a SandBox though since you can create a copy of your org and it works the same as if you were running it on your production org. If you plan to re-run this over time, however, you may consider putting it in a stage environment that gets refreshed regularly.
+I recommend running this in a SandBox since you can create a copy of your org and it works the same as if you were running it on your production org. If you plan to re-run this over time, however, you may consider putting it in a stage environment that gets refreshed regularly. Also note that the Object Auditor record counts may be inaccurate if your Sandbox does not copy over records from Production.
 
 ## <a name="here"></a>Currently Available Metadata
 
 | Field Auditor    | RecordType Auditor    | Object Auditor             |
 |:-----------------|:----------------------|:-------------------------- |
-|Field Id          |Corresponding Object   |Object Label                |
-|Field Label       |RecordType Label       |Object API Name             |
-|Field API Name    |RecordType API Name    |Description                 |
-|Field Description |Description            |IsCustom?                   |
-|Field HelpText    |IsActive?              |Total Fields                |
-|Created By        |Created By             |Number Custom Fields        |
-|Last Modified By  |Last Modified By       |Number Standard Fields      |
-|Created Date      |Created Date           |Number Fields w/ Description|
-|Last Modified Date|Last Modified Date     |Number Fields w/ HelpText   |
-|                  |                       |Number Record Types         |
+|Field Id          |Corresponding Object   |Durable Id                  |
+|Field Label       |RecordType Label       |Object Label                |
+|Field API Name    |RecordType API Name    |Plural Label                |
+|Field Description |Description            |API Name                    |
+|Field HelpText    |IsActive?              |Description                 |
+|Created By        |Created By             |Record Count                |
+|Last Modified By  |Last Modified By       |Created By                  |
+|Created Date      |Created Date           |Last Modified By            |
+|Last Modified Date|Last Modified Date     |Created Date                |
+|                  |                       |Last Modified Date          |
 
 
 ## Contributing
@@ -78,7 +74,7 @@ This project is unmonitored. Contributions are not accepted at this time.
 ## Authors
 
 * [Tristyn Maalouf](https://github.com/tristyn-maalouf)
-* Kevin Jerauld
+* [Kevin Jerauld](https://github.com/airtightspring)
 
 
 ## License

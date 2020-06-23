@@ -1,0 +1,53 @@
+<apex:page controller="ObjectAuditor" action="{!init}"> 
+        
+    
+	<apex:form >
+        <apex:commandButton action="{!queryObjects}" value="Query All Objects"/>
+   </apex:form>
+    
+    <br/>
+	<font size="3"><i>Note: table can only hold 1000 entries and the common standard objects list contains {!cSOListSize} objects.</i></font>
+    <font size="3"><i>The common standard objects list can be changed via the ObjectAuditor class.</i></font>
+	<br/>
+    
+   <apex:pageBlock >
+      <apex:pageBlockTable var="r" value="{!resultsList}" >
+         <apex:column >
+            <apex:facet name="header">Durable Id</apex:facet> 
+            <apex:outputText value="{!r.durableId}"/>
+         </apex:column>  
+         <apex:column >
+            <apex:facet name="header">Label</apex:facet> 
+            <apex:outputText value="{!r.label}"/>
+         </apex:column>          
+         <apex:column > 
+            <apex:facet name="header">Object API Name</apex:facet> 
+            <apex:outputText value="{!r.apiName}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Object Description</apex:facet> 
+            <apex:outputText value="{!r.description}"/>
+         </apex:column>  
+         <apex:column >
+            <apex:facet name="header">Record Count</apex:facet> 
+            <apex:outputText value="{!r.recordCount}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Created By</apex:facet>
+            <apex:outputText value="{!r.createdBy}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Last Modified By</apex:facet>
+            <apex:outputText value="{!r.lastModifiedBy}"/>
+         </apex:column>  
+         <apex:column >
+             <apex:facet name="header">Created Date</apex:facet>
+            <apex:outputText value="{!r.createdDate}"/>
+         </apex:column>
+         <apex:column >
+            <apex:facet name="header">Last Modified Date</apex:facet>
+            <apex:outputText value="{!r.lastModifiedDate}"/>
+         </apex:column>   
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,64 @@
+<apex:page controller="RecordTypeAuditor">
+    <h1>
+        <font size="3">Enter the API name of an Object you would like to audit, or select 'Audit All RecordTypes' below:</font>
+    </h1>
+    <br/>
+    <br/>
+
+    <apex:form style="width:390px">        
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputText value="{!selectedObject}" style="width:300px"/>   
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!auditObject}" value="Submit"/>      
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <apex:form >        
+        <apex:commandButton action="{!auditAll}" value="Audit All RecordTypes"/>
+    </apex:form>
+    
+   <apex:pageBlock >
+      <apex:pageBlockTable var="r" value="{!resultsList}" >
+         <apex:column >
+            <apex:facet name="header">Object</apex:facet> 
+            <apex:outputText value="{!r.objectName}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">RecordType Label</apex:facet> 
+            <apex:outputText value="{!r.label}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">API Name</apex:facet>
+            <apex:outputText value="{!r.apiName}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Description</apex:facet>
+            <apex:outputText value="{!r.description}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Is Active</apex:facet>
+            <apex:outputText value="{!r.isActive}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Created By</apex:facet>
+            <apex:outputText value="{!r.createdBy}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Last Modified By</apex:facet>
+            <apex:outputText value="{!r.lastModifiedBy}"/>
+         </apex:column>
+         <apex:column >
+            <apex:facet name="header">Created Date</apex:facet>
+            <apex:outputText value="{!r.createdDate}"/>
+         </apex:column>  
+         <apex:column >
+            <apex:facet name="header">Last Modified Date</apex:facet>
+            <apex:outputText value="{!r.lastModifiedDate}"/>
+         </apex:column> 
+         
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+</apex:page>

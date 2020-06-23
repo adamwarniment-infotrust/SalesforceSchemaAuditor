@@ -1,0 +1,91 @@
+<apex:page controller="FieldAuditor" action="{!getAllSFObjects}">
+
+    <br/>
+    <br/>
+    <h1>
+        <font size="3">Choose an object to audit:</font>
+        <br/>
+        <br/>
+        <font size="2"><i>Note: picklist can only hold 1000 entries, so if your org has more than 1000 objects some may not show here but can be searched for below.</i></font>
+    </h1>
+    <apex:form style="width:250px">
+        <apex:selectList size="1" value="{!selectedObject}"> 
+            <apex:selectOptions value="{!availableObjects}"/>  
+            <apex:actionSupport event="onchange" action="{!gatherFieldData}" />
+        </apex:selectList>
+    </apex:form>
+    
+    <br/>
+    
+    <h1>
+        <font size="3">Or Enter the Object's API Name here:</font>
+    </h1>
+    <apex:form style="width:390px">
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputText value="{!selectedObject}" style="width:300px"/>   
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom" style="float:centre">
+                <apex:commandButton action="{!gatherFieldData}" value="Submit"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    
+    
+    <br/> 
+    
+    <h1>
+        <font size="3">Object: <apex:outputText value=" {!selectedObject} - {!isCustomObject}, {!numResults} fields"/></font>
+    </h1>
+    <br/>
+        
+   <apex:pageBlock >
+      <apex:pageBlockTable var="r" value="{!resultsList}" >
+         <apex:column >
+            <apex:facet name="header">Durable Id</apex:facet> 
+            <apex:outputText value="{!r.durableId}"/>
+         </apex:column>  
+         <apex:column >
+            <apex:facet name="header">Field Label</apex:facet> 
+            <apex:outputText value="{!r.fieldLabel}"/>
+         </apex:column>          
+         <apex:column >
+            <apex:facet name="header">API Name</apex:facet>
+            <apex:outputText value="{!r.apiName}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Custom?</apex:facet>
+            <apex:outputText value="{!r.isCustom}"/>
+         </apex:column>           
+         <apex:column >
+            <apex:facet name="header">Data Type</apex:facet>
+            <apex:outputText value="{!r.dataType}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Description</apex:facet>
+            <apex:outputText value="{!r.description}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Help Text</apex:facet>
+            <apex:outputText value="{!r.helpText}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Created By</apex:facet>
+            <apex:outputText value="{!r.createdBy}"/>
+         </apex:column> 
+         <apex:column >
+            <apex:facet name="header">Last Modified By</apex:facet>
+            <apex:outputText value="{!r.lastModifiedBy}"/>
+         </apex:column>
+         <apex:column >
+            <apex:facet name="header">Created Date</apex:facet>
+            <apex:outputText value="{!r.createdDate}"/>
+         </apex:column>  
+         <apex:column >
+            <apex:facet name="header">Last Modified Date</apex:facet>
+            <apex:outputText value="{!r.lastModifiedDate}"/>
+         </apex:column> 
+         
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+</apex:page>
