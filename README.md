@@ -1,6 +1,6 @@
 # Salesforce Schema Auditor
 
-Salesforce Schema Auditor leverages Salesforce's [Tooling API](https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/intro_api_tooling.htm) and [Schema Class](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_schema.htm) to gather metadata on your organization's Objects, Fields, and Record Types. Examples of metadata are created/last modified date and user, description, helptext, number of fields (for objects), etc. A complete list of currently available metadata can be found [here](#here).
+Salesforce Schema Auditor leverages Salesforce's [Tooling API](https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/intro_api_tooling.htm) and [Schema Class](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_schema.htm) to gather metadata on your organization's Objects, Fields, and Record Types. Examples of metadata are created/last modified date and user, description, helptext, etc. A complete list of currently available metadata can be found [here](#here).
 
 
 ## Getting Started
