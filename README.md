@@ -66,6 +66,9 @@ Running the audits in a Sandbox is recommended since you can create a copy of yo
 |                  |                       |Last Modified Date          |
 
 
+## Moving Data
+It's likely you'll want to move the data out of the VisualForce table and into a tool like Excel. For an easy copy-paste solution, try the [Chrome Table Capture Tool](https://chrome.google.com/webstore/detail/table-capture/iebpjdmgckacbodjpijphcplhebcmeop?hl=en).
+
 ## Contributing
 
 This project is unmonitored. Contributions are not accepted at this time.
