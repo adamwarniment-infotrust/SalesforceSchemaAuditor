@@ -48,7 +48,7 @@ You should now be able to search for your Lightning App and run the audit agains
 
 ## Deployment
 
-I recommend running this in a SandBox since you can create a copy of your org and it works the same as if you were running it on your production org. If you plan to re-run this over time, however, you may consider putting it in a stage environment that gets refreshed regularly. Also note that the Object Auditor record counts may be inaccurate if your Sandbox does not copy over records from Production.
+Running the audits in a Sandbox is recommended since you can create a copy of your org and it works the same as if you were running it on your production org. If you plan to re-run this over time, however, you may consider putting it in a stage environment that gets refreshed regularly. Also note that the Object Auditor record counts may be inaccurate if your Sandbox does not copy over records from Production.
 
 ## <a name="here"></a>Currently Available Metadata
 
